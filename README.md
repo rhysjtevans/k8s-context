@@ -7,14 +7,15 @@ I found myself having to remember which namespace I wanted to deploy Kubernetes 
 
 Now with the generated kube config you can switch contexts and make sure you deploy to the right namespaces.
 
-## Example
+## VSCode Example
 I'm a big fan of VSCode so here's what the end result looks like in that using the [Kubernetes Extension](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools).
 <img src="./docs/img/example-vscode.png" alt="VSCode Kubernetes Extension Example" width="250"/>
 
-To use the contexts with VSCode you'll need;
-1) [VSCode](https://code.visualstudio.com/download) (Obviously!)
+To use the contexts with VSCode you'll need
+1) [VSCode](https://code.visualstudio.com/download)
 2) [Kubernetes Extension](https://marketplace.visualstudio.com/items?itemName=ms-kubernetes-tools.vscode-kubernetes-tools)
 
+The extension will install [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl) and [Helm Client](https://github.com/helm/helm/releases) for you if it can't find them.
 
 ## Requirements
 We need to several files to be able to configure the Kubernetes contexts.
