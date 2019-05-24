@@ -83,7 +83,7 @@ Example of maps.json. The JSON keys must match to the clusters in the JSON Confi
 
 > Important Note! This will backup your existing config and create a new one. It will not merge the two (yet!).    
 
-You must substitute paths for your correct paths leaving the container paths the same.
+You must substitute your own paths leaving the container paths the same.
 ```
 docker run --rm \
         -v /Users/rhysevans/.kube:/root/.kube \
