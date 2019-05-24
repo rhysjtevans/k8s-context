@@ -28,7 +28,7 @@ We need to several files to be able to configure the Kubernetes contexts.
 
 1) Save/hack together your config.json (Example below)
 2) Hack together your maps.json (Example below)
-3) Run the docker command below and it will generate a new `~/.kube/config` file in your home directory
+3) Run the docker command below to generate a new `~/.kube/config` file in your home directory
 
 > Important Note! This will backup your existing config and create a new one. It will not merge the two (To-do list!).    
 
