@@ -25,8 +25,36 @@ We need to several files to be able to configure the Kubernetes contexts.
 
 ## Getting Started
 
-1) Get your JSON Payload.
-Example of a JSON Config snippet Payload 
+1) Save/hack together your config.json (Example below)
+2) Hack together your maps.json (Example below)
+3) Run the docker command below and it will generate a new `~/.kube/config` file in your home directory
+
+> Important Note! This will backup your existing config and create a new one. It will not merge the two (To-do list!).    
+
+You must substitute your own paths leaving the container paths the same.
+```
+docker run --rm \
+        -v /Users/rhysevans/.kube:/root/.kube \
+        -v /Users/rhysevans/config.json:/root/config.json:ro \
+        -v /Users/rhysevans/maps.json:/root/maps.json:ro \
+        rhysjtevans/k8s-context:latest
+```
+### Example of maps.json
+The JSON keys must match and must exist for each cluster in the JSON config payload.
+```
+{
+  "cluster_one": {
+    "Server": "https://api.cluster1.local",
+    "Token": "<TOKEN/GUID>"
+  },
+  "cluster_two": {
+    "Server": "https://api.cluster2.local",
+    "Token": "<TOKEN/GUID>"
+  }
+}
+```
+
+### Example of config.json 
 ```
 {
   "kubernetes": {
@@ -62,32 +90,4 @@ Example of a JSON Config snippet Payload
     ]
   }
 }
-```
-
-Example of maps.json. The JSON keys must match to the clusters in the JSON Config payload.
-```
-{
-  "cluster_one": {
-    "Server": "https://api.cluster1.local",
-    "Token": "<TOKEN/GUID>"
-  },
-  "cluster_two": {
-    "Server": "https://api.cluster2.local",
-    "Token": "<TOKEN/GUID>"
-  }
-}
-```
-
-
-1) Then run the following docker command and it will generate a new `~/.kube/config` file.
-
-> Important Note! This will backup your existing config and create a new one. It will not merge the two (yet!).    
-
-You must substitute your own paths leaving the container paths the same.
-```
-docker run --rm \
-        -v /Users/rhysevans/.kube:/root/.kube \
-        -v /Users/rhysevans/config.json:/root/config.json:ro \
-        -v /Users/rhysevans/maps.json:/root/maps.json:ro \
-        rhysjtevans/k8s-context:latest
 ```
