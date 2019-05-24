@@ -24,6 +24,13 @@ We need to several files to be able to configure the Kubernetes contexts.
 
 
 ## Getting Started
+You can use the `Example-Run.sh` to try it out. The script will 
+- boilerplate files
+  - maps.json
+  - config.json
+- Run the docker image as per below
+- Delete the docker image
+
 
 1) Get your JSON Payload.
 Example of a JSON Config snippet Payload 
