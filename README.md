@@ -88,5 +88,5 @@ docker run --rm \
         -v /Users/rhysevans/.kube:/root/.kube \
         -v /Users/rhysevans/config.json:/root/config.json:ro \
         -v /Users/rhysevans/maps.json:/root/maps.json:ro \
-        k8s-context:latest
+        rhysjtevans/k8s-context:latest
 ```
